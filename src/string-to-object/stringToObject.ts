@@ -1,5 +1,5 @@
-export const StartExclusive = ":"
-export const EndExclusive = "/"
+const StartExclusive = ":"
+const EndExclusive = "/"
 
 type Token<K extends string> = `${any}${typeof StartExclusive}${K}${typeof EndExclusive}${any}`
 
