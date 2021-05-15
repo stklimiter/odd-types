@@ -1,0 +1,26 @@
+{
+  "name": "odd-types",
+  "version": "0.0.1",
+  "description": "A collection of types that may or may not be production worthy, but are fun nevertheless",
+  "main": "dis/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "types",
+    "typescript"
+  ],
+  "devDependencies": {
+    "typescript": "^4.2.4",
+    "ts-jest": "^26.5.6",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3"
+  },
+  "author": "stklimiter",
+  "license": "ISC"
+}
