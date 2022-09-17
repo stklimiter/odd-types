@@ -1,4 +1,3 @@
-
 /**
  * Create a typed list of length N, of Type T.
  *  Example:
@@ -45,7 +44,7 @@ export type Flatten<A extends [...any[]]> = A extends [infer A_, ...infer Rest] 
 export type CrossProduct<A extends number, B extends number> = [...Flatten<ListOfLength<A, ListOfLength<B>>>]['length']
 
 
-export type AddOne<K extends number> = [unknown, ...ListOfLength<K>]['length']
+
 
 
 
