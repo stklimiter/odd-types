@@ -43,10 +43,19 @@ export type Flatten<A extends [...any[]]> = A extends [infer A_, ...infer Rest] 
  */
 export type CrossProduct<A extends number, B extends number> = [...Flatten<ListOfLength<A, ListOfLength<B>>>]['length']
 
+type BetweenTo<To extends number, Counter extends [...any[]] = []> = [any, ...Counter]['length'] extends To ? Counter['length'] : (Counter['length'] | BetweenTo<To, [any, ...Counter]>)
+type BetweenFrom<From extends number, To extends number, Counter extends [...any[]] = []> = Counter['length'] extends From ? From | BetweenTo<To, [any, ...Counter]> : BetweenFrom<From, To, [any, ...Counter]>
 
-
-
-
+/**
+ * Create a type between two numbers
+ *  Example:
+ *  Correct:
+ *      const between: Between<5,29> = 29
+ *  Incorrect:
+ *      const between: Between<25,29> = 30
+ *      Type '30' is not assignable to type '25 | 29 | 26 | 27 | 28'.
+ */
+export type Between<FromInclude extends number, ToExclude extends number> =  BetweenFrom<FromInclude, ToExclude>
 
 
 
